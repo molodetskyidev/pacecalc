@@ -117,19 +117,25 @@ public class PaceCalcTest {
 	  int time;
 	  
 	  //simple usual pace and time
+	  
 	  time=mycalc.calcTime(360, 10000);
 	  Assert.assertEquals("Test simple usual distance and time Wrong pace! ", 3600 , time);
-	  /*
-	  //small distance and big time
-	   pace=mycalc.calcPace(10, 3600);
-	  Assert.assertEquals("Test distance small, long time Wrong pace! ", 360000 , pace);
-	  //halfmarathon distance and 1 hr time
-	  pace=mycalc.calcPace(21097, 3600);
-	  Assert.assertEquals("Test halfmarathon by 1 hour Wrong pace! ", 170 , pace);
-	  //small time and big distance
-	  pace=mycalc.calcPace(21097, 1);
-	  Assert.assertEquals("Test halfmarathon by 1 hour Wrong pace! ", 0 , pace);
-	  */
+	  
+	  //small pace and big distance
+	  
+	   time=mycalc.calcTime(10, 42195);
+	  Assert.assertEquals("Test distance small, long time Wrong pace! ", 421 , time);
+	  
+	  //halfmarathon distance and 5min/km pace
+	  
+	  time=mycalc.calcTime(21097, 300);
+	  Assert.assertEquals("Test halfmarathon distance and 5min/km pace Wrong pace! ", 6329 , time);
+	  
+	  //small distance and big pace
+	  
+	  time=mycalc.calcTime(10, 36000);
+	  Assert.assertEquals("Test halfmarathon by 1 hour Wrong pace! ", 360 , time);
+	  
 	  
   }
 }
