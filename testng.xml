@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test name="Test">
     <classes>
-      <class name="pacecalc.pacecalc.AppTest"/>
+      <class name="pacecalc.pacecalc.PaceCalcTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
