@@ -38,6 +38,8 @@ public class PaceCalc {
     
     //parseFrom methods convert fields' values in usual format in Strings
     
+    //parseFromTime converts int to format String hh:mm:ss
+    
     protected String  parseFromTime(int time){
     	String timeHours;
     	String timeMin;
@@ -51,6 +53,8 @@ public class PaceCalc {
     			
     	return returnTime;
     }
+    
+  //parseFromDistance converts int to format String km.mmm
     
     protected String  parseFromDistance(int distance){
     	int returnDistanceKm;
@@ -74,19 +78,35 @@ public class PaceCalc {
     	return returnDistance;
     }
     
+     //parseFromPace converts int to format String hh:mm:ss
+    
     protected String  parseFromPace(int pace){
+    	String returnPaceHrs;
     	String returnPaceMin;
     	String returnPaceSec;
     	String returnPace;
-    	returnPaceMin= LeadingZero(pace/60);
-    	returnPaceSec=LeadingZero(pace%360);
+    	returnPaceHrs=LeadingZero(pace/3600);
+    	returnPaceMin= LeadingZero((pace%3600)/60);
+    	returnPaceSec=LeadingZero((pace%3600)%60);
+    	if(returnPaceHrs.compareTo("00")!=0){
+    		returnPace=returnPaceHrs+":"+returnPaceMin + ":" + returnPaceSec;
+    	}
+    	else{
+    	
     	returnPace=returnPaceMin + ":" + returnPaceSec;
+    	}
     	return returnPace;
     }
+    
+  //parseFromSpeed converts double to format String km.mm
+    
     protected String parseFromSpeed(double speed){
     	String returnSpeed = Double.toString(speed);
     	return returnSpeed;
     }
+    
+    //method to cover situation with leading 0 in parseFrom strings
+    
     private String LeadingZero(int intNumber){
     	String strLeadingZero;
     	if(intNumber<10){
@@ -97,7 +117,27 @@ public class PaceCalc {
     	}
     	return strLeadingZero;
     }
+    
+    //method for Pace calculation based on distance and time
+    
     protected int calcPace(int distance, int time){
-    	return 0;
+    	int resultPace;
+    	resultPace=(int)(1000*time/distance);
+    	return resultPace;
+    }
+    
+    //default empty constructor
+    
+    public PaceCalc(){
+    	
+    }
+    
+    // second constructor which sets all fields on create Object
+    
+    public PaceCalc(int pace, int distance, int time, double speed){
+    	this.setDistance(distance);
+    	this.setPace(pace);
+    	this.setTime(time);
+    	this.setSpeed(speed);
     }
 }
