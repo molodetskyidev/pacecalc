@@ -54,6 +54,13 @@ public class PaceCalc {
     	resultTime=(int)(pace*distance/1000);
     	return resultTime;
     }
+    
+    protected double calcSpeed(int pace){
+    	double resultSpeed;
+    	resultSpeed=(double)(3600)/(double)(pace);
+    	return resultSpeed;
+    }
+    
     //default empty constructor
     
     public PaceCalc(){
