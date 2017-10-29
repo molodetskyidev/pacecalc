@@ -1,6 +1,6 @@
 package util;
 import java.math.RoundingMode;
-public class DistanceConvertor {
+public class KmToMileConvertor {
 	
 	public String convertKmToMile(int distanceKm){
 		String distanceMile;

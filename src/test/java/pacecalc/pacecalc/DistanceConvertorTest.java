@@ -1,5 +1,5 @@
 package pacecalc.pacecalc;
-import util.DistanceConvertor;
+import util.KmToMileConvertor;
 //import util.Parser;
 import org.testng.annotations.Test;
 
@@ -11,7 +11,7 @@ public class DistanceConvertorTest {
   public void convertKMtoMileTest() {
 	  int distanceKm;
 	  String distanceMile;
-	  DistanceConvertor convertor =new DistanceConvertor();
+	  KmToMileConvertor convertor =new KmToMileConvertor();
 	  distanceKm=10000;
 	  distanceMile=convertor.convertKmToMile(distanceKm);
 	  Assert.assertEquals("Test converting usual distance to mile", "6.214", distanceMile);
@@ -22,7 +22,7 @@ public class DistanceConvertorTest {
 	  int distanceKm;
 	  String distanceMile;
 	  distanceMile="6.214";
-	  DistanceConvertor convertor =new DistanceConvertor(); 
+	  KmToMileConvertor convertor =new KmToMileConvertor(); 
 	  distanceKm=convertor.convertMileToKm(distanceMile);
 	  Assert.assertEquals("Test converting usual distance to mile", 9999, distanceKm);
   }
