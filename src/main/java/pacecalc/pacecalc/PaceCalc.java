@@ -44,7 +44,16 @@ public class PaceCalc {
     	resultPace=(int)(1000*time/distance);
     	return resultPace;
     }
-    
+    protected int calcDistance(int pace, int time){
+    	int resultDistance;
+    	resultDistance=(int)(1000*time/pace);
+    	return resultDistance;
+    }
+    protected int calcTime(int pace, int distance){
+    	int resultTime;
+    	resultTime=(int)(pace*distance/1000);
+    	return resultTime;
+    }
     //default empty constructor
     
     public PaceCalc(){
@@ -59,4 +68,5 @@ public class PaceCalc {
     	this.setTime(time);
     	this.setSpeed(speed);
     }
+   
 }

@@ -87,4 +87,49 @@ public class PaceCalcTest {
 	  
 	  
   }
+  @Test
+  public void testCalcDistance(){
+	
+	  PaceCalc mycalc =new PaceCalc();
+	  int distance;
+	  
+	  //simple usual pace and time
+	  distance=mycalc.calcDistance(360, 3600);
+	  Assert.assertEquals("Test simple usual pace and time Wrong distance! ", 10000 , distance);
+	  
+	  //small pace and big time
+	   distance=mycalc.calcDistance(10, 3600);
+	  Assert.assertEquals("Test pace small, long time Wrong distance! ", 360000 , distance);
+	  //halfmarathon pace and 1:30 hr time
+	  distance=mycalc.calcDistance(256, 5401);
+	  Assert.assertEquals("Test halfmarathon pace by 1:30 hour Wrong distance! ", 21097 , distance);
+	  //small time and big pace
+	  distance=mycalc.calcDistance(720, 20);
+	  Assert.assertEquals("Test small time and big pace Wrong pace! ", 27 , distance);
+	  
+	  
+  }
+  
+  @Test
+  public void testCalcTiime(){
+	
+	  PaceCalc mycalc =new PaceCalc();
+	  int time;
+	  
+	  //simple usual pace and time
+	  time=mycalc.calcTime(360, 10000);
+	  Assert.assertEquals("Test simple usual distance and time Wrong pace! ", 3600 , time);
+	  /*
+	  //small distance and big time
+	   pace=mycalc.calcPace(10, 3600);
+	  Assert.assertEquals("Test distance small, long time Wrong pace! ", 360000 , pace);
+	  //halfmarathon distance and 1 hr time
+	  pace=mycalc.calcPace(21097, 3600);
+	  Assert.assertEquals("Test halfmarathon by 1 hour Wrong pace! ", 170 , pace);
+	  //small time and big distance
+	  pace=mycalc.calcPace(21097, 1);
+	  Assert.assertEquals("Test halfmarathon by 1 hour Wrong pace! ", 0 , pace);
+	  */
+	  
+  }
 }
