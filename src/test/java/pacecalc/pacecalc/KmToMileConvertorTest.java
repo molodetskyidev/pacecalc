@@ -1,11 +1,11 @@
 package pacecalc.pacecalc;
 import util.KmToMileConvertor;
-//import util.Parser;
+
 import org.testng.annotations.Test;
 
 import junit.framework.Assert;
 
-public class DistanceConvertorTest {
+public class KmToMileConvertorTest {
 	
   @Test
   public void convertKMtoMileTest() {

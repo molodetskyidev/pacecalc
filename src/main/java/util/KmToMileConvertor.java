@@ -15,4 +15,16 @@ public class KmToMileConvertor {
 		distanceKm=(int)Math.ceil(Double.parseDouble(distanceMile)*1609.0);
 		return distanceKm;
 	}
+
+	public String convertSpeedKmhToMpH(double speedKm){
+		
+		String speedMpH="test";
+		return speedMpH;
+	}
+	
+	public double convertSpeedMpHtoKmh(String speedMph){
+		
+		double speedKm=0.0;
+		return speedKm;
+	}
 }

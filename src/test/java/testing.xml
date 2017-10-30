@@ -4,7 +4,7 @@
     <classes>
       <class name="pacecalc.pacecalc.PaceCalcTest"/>
       <class name="pacecalc.pacecalc.ParserTest"/>
-      <class name="pacecalc.pacecalc.DistanceConvertorTest" />
+      <class name="pacecalc.pacecalc.KmToMileConvertorTest" />
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
