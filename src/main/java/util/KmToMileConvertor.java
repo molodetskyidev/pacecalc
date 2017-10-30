@@ -17,14 +17,16 @@ public class KmToMileConvertor {
 	}
 
 	public String convertSpeedKmhToMpH(double speedKm){
+		String speedMpH;
+		speedMpH=Double.toString(Math.ceil(speedKm*621.4)/1000.0);
 		
-		String speedMpH="test";
 		return speedMpH;
 	}
 	
-	public double convertSpeedMpHtoKmh(String speedMph){
+	public double convertSpeedMpHtoKmh(String speedMpH){
 		
-		double speedKm=0.0;
+		double speedKm;
+		speedKm=Math.ceil(Double.parseDouble(speedMpH)*160.9)/100.0;
 		return speedKm;
 	}
 }
