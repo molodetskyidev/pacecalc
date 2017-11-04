@@ -4,6 +4,7 @@ public class Events {
 	public int returnDistance(String evntName){
 		int evntDistance=0;
 		/*
+		 * and now?
 		 * check push
 		 * so what?
 		switch(evntName){
