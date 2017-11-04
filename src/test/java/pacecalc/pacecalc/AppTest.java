@@ -38,6 +38,6 @@ public class AppTest
     public void testApp()
     
     {
-		Assert.assertEquals(true, true)
+		Assert.assertEquals(true, true);
     }
 }
