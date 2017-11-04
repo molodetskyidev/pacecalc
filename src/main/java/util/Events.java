@@ -5,6 +5,7 @@ public class Events {
 		int evntDistance=0;
 		/*
 		 * check push
+		 * so what?
 		switch(evntName){
 		case "Marathon": evntDistance=42195; break;
 		case "Halfmarathon":evntDistance=21097;break;
