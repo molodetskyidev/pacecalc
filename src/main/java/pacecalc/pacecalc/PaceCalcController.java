@@ -20,6 +20,7 @@ public class PaceCalcController {
 		Scanner userInput = new Scanner(System.in);
 		// PaceCalc pacecalc=new PaceCalc();
 		Parser parser = new Parser();
+		try{
 		int userSelection = userInput.nextInt();
 		// TODO looks like I don't need setters in this function should think
 		// about their deletion
@@ -144,6 +145,11 @@ public class PaceCalcController {
 			cli.showErrorMsg();
 			CalcFlow(pacecalc, cli);
 			break;
+		}
+		}
+		catch(NumberFormatException e){
+			cli.showErrorMsg();
+			CalcFlow(pacecalc, cli);
 		}
 		userInput.close();
 	}
