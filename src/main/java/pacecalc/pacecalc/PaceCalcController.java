@@ -29,10 +29,22 @@ public class PaceCalcController {
 			cli.showEnterTimeMsg();
 			timeStr = userInput.next();
 			timeInt = parser.timeStringToInt(timeStr);
+			while(timeInt<0){
+				cli.showErrorMsg();
+				cli.showEnterTimeMsg();
+				timeStr = userInput.next();
+				timeInt = parser.timeStringToInt(timeStr);
+			}
 			// pacecalc.setTime(timeInt);
 			cli.showEnterDistanceMsg();
 			distanceStr = userInput.next();
 			distanceInt = parser.distanceStringToInt(distanceStr);
+			while(distanceInt<0){
+				cli.showErrorMsg();
+				cli.showEnterDistanceMsg();
+				distanceStr = userInput.next();
+				distanceInt = parser.distanceStringToInt(distanceStr);
+			}
 			// pacecalc.setTime(distanceInt);
 			paceInt = pacecalc.calcPace(distanceInt, timeInt);
 			paceStr = parser.parseFromPace(paceInt);
@@ -51,10 +63,23 @@ public class PaceCalcController {
 			cli.showEnterDistanceMsg();
 			distanceStr = userInput.next();
 			distanceInt = parser.distanceStringToInt(distanceStr);
+			while(distanceInt<0){
+				cli.showErrorMsg();
+				cli.showEnterDistanceMsg();
+				distanceStr = userInput.next();
+				distanceInt = parser.distanceStringToInt(distanceStr);
+			}
+			
 			// pacecalc.setDistance(distanceInt);
 			cli.showEnterPaceMsg();
 			paceStr = userInput.next();
 			paceInt = parser.paceStringToInt(paceStr);
+			while(paceInt<0){
+				cli.showErrorMsg();
+				cli.showEnterPaceMsg();
+				paceStr = userInput.next();
+				paceInt = parser.paceStringToInt(paceStr);
+			}
 			// pacecalc.setPace(paceInt);
 			timeInt = pacecalc.calcTime(paceInt, distanceInt);
 			timeStr = parser.parseFromTime(timeInt);
@@ -67,16 +92,30 @@ public class PaceCalcController {
 				cli.showExitMsg();
 				System.exit(0);
 			}
+			
 			break;
 		case 3:
 			cli.showCalculateDistanceMsg();
 			cli.showEnterPaceMsg();
 			paceStr = userInput.next();
 			paceInt = parser.paceStringToInt(paceStr);
+			while(paceInt<0){
+				cli.showErrorMsg();
+				cli.showEnterPaceMsg();
+				paceStr = userInput.next();
+				paceInt = parser.paceStringToInt(paceStr);
+			}
+			
 			// pacecalc.setPace(paceInt);
 			cli.showEnterTimeMsg();
 			timeStr = userInput.next();
 			timeInt = parser.timeStringToInt(timeStr);
+			while(timeInt<0){
+				cli.showErrorMsg();
+				cli.showEnterTimeMsg();
+				timeStr = userInput.next();
+				timeInt = parser.timeStringToInt(timeStr);
+			}
 			// pacecalc.setTime(timeInt);
 			distanceInt = pacecalc.calcDistance(paceInt, timeInt);
 			distanceStr = parser.parseFromDistance(distanceInt);
@@ -89,6 +128,7 @@ public class PaceCalcController {
 				cli.showExitMsg();
 				System.exit(0);
 			}
+			
 			break;
 		case 0:
 			cli.showExitQuestionMsg();
