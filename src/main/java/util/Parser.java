@@ -10,7 +10,7 @@ public class Parser {
 		String timeHours;
 		String timeMin;
 		String timeSec;
-        String returnTime;
+		String returnTime;
 		timeHours = LeadingZero(time / 3600);
 		timeMin = LeadingZero((time % 3600) / 60);
 		timeSec = LeadingZero((time % 3600) % 60);
@@ -66,29 +66,70 @@ public class Parser {
 		String returnSpeed = Double.toString(speed);
 		return returnSpeed;
 	}
+
 	public int timeStringToInt(String timeString) {
 		String delims = ":";
+		int timeInt;
 		String[] time = timeString.split(delims);
-		
-		int timeInt = Integer.parseInt(time[0])*3600+Integer.parseInt(time[1])*60+Integer.parseInt(time[2]);
-		
+		if (time.length != 3) {
+			timeInt = -1;
+		} else {
+			try {
+				
+			    int hours=Integer.parseInt(time[0]);
+				int min = Integer.parseInt(time[1]);
+				int sec = Integer.parseInt(time[2]);
+				if (hours>60 || min > 60 || sec > 60 || min<0 || sec<0 || hours<0) {
+					timeInt = -1;
+				}
+				else{
+					timeInt = hours * 3600 + min * 60 + sec;
+				}
+			} catch (NumberFormatException e)
+			{
+				timeInt = -1;
+			}
+		}
 		return timeInt;
 	}
+
 	public int paceStringToInt(String timeString) {
 		String delims = ":";
+		int timeInt;
 		String[] time = timeString.split(delims);
-		
-		int timeInt = Integer.parseInt(time[0])*60+Integer.parseInt(time[1]);
-		
+		if (time.length != 2) {
+			timeInt = -1;
+		} else {
+			try {
+				int min = Integer.parseInt(time[0]);
+				int sec = Integer.parseInt(time[1]);
+				if (min > 60 || sec > 60 || min<0 || sec<0) {
+					timeInt = -1;
+				}
+				else{
+				timeInt = min * 60 + sec;
+				}
+			} catch (NumberFormatException e) {
+				timeInt = -1;
+			}
+		}
+
 		return timeInt;
 	}
 
-
 	public int distanceStringToInt(String distanceEnteredP) {
-		int distanceInt=Integer.parseInt(distanceEnteredP);
+		int distanceInt;
+		try {
+			distanceInt = Integer.parseInt(distanceEnteredP);
+			if (distanceInt < 0) {
+				distanceInt = -1;
+			}
+		} catch (NumberFormatException e) {
+			distanceInt = -1;
+		}
 		return distanceInt;
 	}
-	
+
 	// method to cover situation with leading 0 in parseFrom strings
 
 	public String LeadingZero(int intNumber) {

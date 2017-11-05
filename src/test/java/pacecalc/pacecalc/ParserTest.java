@@ -125,6 +125,8 @@ public class ParserTest {
 		parsePace = parser.parseFromPace(pace);
 		Assert.assertEquals("Test for very bit pace: Wrong parse pace! ", "100:00:00", parsePace);
 
+		//
+
 		// ***** speed parsing *****
 
 		// only km
@@ -188,6 +190,28 @@ public class ParserTest {
 		// zero time
 		parseTime = parser.timeStringToInt("00:00:00");
 		Assert.assertEquals(0, parseTime);
+
+		// wrong formatting
+		parseTime = parser.timeStringToInt("00-00-00");
+		Assert.assertEquals(-1, parseTime);
+
+		// non-integer value
+		parseTime = parser.timeStringToInt("fl:jdlfksj:00");
+		Assert.assertEquals(-1, parseTime);
+
+		// value >60
+		parseTime = parser.paceStringToInt("61:102:76");
+		Assert.assertEquals(-1, parseTime);
+
+		// negative value
+		parseTime = parser.paceStringToInt("-23:-34:-45");
+		Assert.assertEquals(-1, parseTime);
+
+		// more values than expected
+
+		parseTime = parser.paceStringToInt("23:34:45:34");
+		Assert.assertEquals(-1, parseTime);
+
 	}
 
 	@Test
@@ -197,8 +221,8 @@ public class ParserTest {
 		 */
 
 		Parser parser = new Parser();
-		
-		//  minutes and seconds
+
+		// minutes and seconds
 		int parseTime = parser.paceStringToInt("05:45");
 		Assert.assertEquals(345, parseTime);
 		// only seconds
@@ -207,10 +231,32 @@ public class ParserTest {
 		// only minutes
 		parseTime = parser.paceStringToInt("05:00");
 		Assert.assertEquals(300, parseTime);
-		
+
 		// zero time
 		parseTime = parser.paceStringToInt("00:00");
 		Assert.assertEquals(0, parseTime);
+
+		// wrong formatting
+		parseTime = parser.paceStringToInt("00-00");
+		Assert.assertEquals(-1, parseTime);
+
+		// non-integer value
+		parseTime = parser.paceStringToInt("fl:jdlfksj");
+		Assert.assertEquals(-1, parseTime);
+
+		// value >60
+		parseTime = parser.paceStringToInt("61:102");
+		Assert.assertEquals(-1, parseTime);
+
+		// negative value
+		parseTime = parser.paceStringToInt("-23:-34");
+		Assert.assertEquals(-1, parseTime);
+
+		// more values than expected
+
+		parseTime = parser.paceStringToInt("23:34:45");
+		Assert.assertEquals(-1, parseTime);
+
 	}
 
 	@Test
@@ -230,5 +276,20 @@ public class ParserTest {
 		distance = parser.distanceStringToInt("1");
 		Assert.assertEquals(1, distance);
 
+		// non-integer value
+		distance = parser.distanceStringToInt("marathon");
+		Assert.assertEquals(-1, distance);
+
+		// negative value
+		distance = parser.distanceStringToInt("-22");
+		Assert.assertEquals(-1, distance);
+
+		// double value
+		distance = parser.distanceStringToInt("42.195");
+		Assert.assertEquals(-1, distance);
+
+		// integer with spaces
+		distance = parser.distanceStringToInt("10 000");
+		Assert.assertEquals(-1, distance);
 	}
 }

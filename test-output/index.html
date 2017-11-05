@@ -90,7 +90,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -101,7 +101,22 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="pacecalc.pacecalc.EventsTest" hash-for-method="returnDistanceTest">returnDistanceTest</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="pacecalc.pacecalc.ParserTest" hash-for-method="testDistanceParsingStrins">testDistanceParsingStrins</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="pacecalc.pacecalc.ParserTest" hash-for-method="testPaceParsingStrins">testPaceParsingStrins</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="pacecalc.pacecalc.ParserTest" hash-for-method="testParseFunctions">testParseFunctions</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="pacecalc.pacecalc.ParserTest" hash-for-method="testTimeParsingStrins">testTimeParsingStrins</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -119,14 +134,35 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">pacecalc.pacecalc.EventsTest</span>
+              <span class="class-name">pacecalc.pacecalc.ParserTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="returnDistanceTest">
-                  </a> <!-- returnDistanceTest -->
-                  <span class="method-name">returnDistanceTest</span>
+                  <a name="testDistanceParsingStrins">
+                  </a> <!-- testDistanceParsingStrins -->
+                  <span class="method-name">testDistanceParsingStrins</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testPaceParsingStrins">
+                  </a> <!-- testPaceParsingStrins -->
+                  <span class="method-name">testPaceParsingStrins</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testParseFunctions">
+                  </a> <!-- testParseFunctions -->
+                  <span class="method-name">testParseFunctions</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testTimeParsingStrins">
+                  </a> <!-- testTimeParsingStrins -->
+                  <span class="method-name">testTimeParsingStrins</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -134,7 +170,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/private/var/folders/k_/n1nt8q6522xgnpk7dfdxfvdm0000gq/T/testng-eclipse--770564726/testng-customsuite.xml</span>
+            <span class="header-content">/private/var/folders/k_/n1nt8q6522xgnpk7dfdxfvdm0000gq/T/testng-eclipse-1539838289/testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -143,7 +179,7 @@
 &lt;suite name=&quot;Default suite&quot;&gt;
   &lt;test verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;pacecalc.pacecalc.EventsTest&quot;/&gt;
+      &lt;class name=&quot;pacecalc.pacecalc.ParserTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -183,16 +219,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(4);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'returnDistanceTest')
-data.setCell(0, 2, 'pacecalc.pacecalc.EventsTest')
+data.setCell(0, 1, 'testDistanceParsingStrins')
+data.setCell(0, 2, 'pacecalc.pacecalc.ParserTest')
 data.setCell(0, 3, 10);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'testParseFunctions')
+data.setCell(1, 2, 'pacecalc.pacecalc.ParserTest')
+data.setCell(1, 3, 1);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'testTimeParsingStrins')
+data.setCell(2, 2, 'pacecalc.pacecalc.ParserTest')
+data.setCell(2, 3, 1);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'testPaceParsingStrins')
+data.setCell(3, 2, 'pacecalc.pacecalc.ParserTest')
+data.setCell(3, 3, 1);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 10 ms</span>
+              <span class="suite-total-time">Total running time: 13 ms</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -218,10 +266,22 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">pacecalc.pacecalc.EventsTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">pacecalc.pacecalc.ParserTest</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">returnDistanceTest</span>
+                <span class="method-name">testDistanceParsingStrins</span>
                 <span class="method-start">0 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testPaceParsingStrins</span>
+                <span class="method-start">11 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testParseFunctions</span>
+                <span class="method-start">13 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testTimeParsingStrins</span>
+                <span class="method-start">15 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
