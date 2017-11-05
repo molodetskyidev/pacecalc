@@ -1,7 +1,5 @@
 package util;
 
-import java.math.RoundingMode;
-
 public class KmToMileConvertor {
 
 	// method converts km in meters to mile in miles

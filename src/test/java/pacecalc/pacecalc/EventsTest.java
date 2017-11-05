@@ -1,8 +1,5 @@
 package pacecalc.pacecalc;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.testng.annotations.Test;
 
 import junit.framework.Assert;

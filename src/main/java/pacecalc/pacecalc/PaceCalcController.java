@@ -6,10 +6,6 @@ import util.Parser;
 
 public class PaceCalcController {
 
-	public PaceCalcController() {
-		// TODO Auto-generated constructor stub
-	}
-
 	public void CalcFlow(PaceCalc pacecalc, CLIuserInterface cli) {
 		int timeInt;
 		int distanceInt;

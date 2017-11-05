@@ -1,8 +1,6 @@
 package pacecalc.pacecalc;
 
 import org.testng.annotations.*;
-import org.testng.asserts.*;
-
 import junit.framework.Assert;
 
 public class PaceCalcTest {

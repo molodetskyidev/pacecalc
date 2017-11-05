@@ -1,7 +1,5 @@
 package pacecalc.pacecalc;
 
-import static org.testng.Assert.assertEquals;
-
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
