@@ -189,7 +189,7 @@ public class ParserTest {
 		Assert.assertEquals(10804, parseTime);
 		// zero time
 		parseTime = parser.timeStringToInt("00:00:00");
-		Assert.assertEquals(0, parseTime);
+		Assert.assertEquals(-1, parseTime);
 
 		// wrong formatting
 		parseTime = parser.timeStringToInt("00-00-00");
@@ -234,7 +234,7 @@ public class ParserTest {
 
 		// zero time
 		parseTime = parser.paceStringToInt("00:00");
-		Assert.assertEquals(0, parseTime);
+		Assert.assertEquals(-1, parseTime);
 
 		// wrong formatting
 		parseTime = parser.paceStringToInt("00-00");
@@ -275,6 +275,10 @@ public class ParserTest {
 		// small value
 		distance = parser.distanceStringToInt("1");
 		Assert.assertEquals(1, distance);
+		
+		// zero value
+				distance = parser.distanceStringToInt("0");
+				Assert.assertEquals(-1, distance);
 
 		// non-integer value
 		distance = parser.distanceStringToInt("marathon");

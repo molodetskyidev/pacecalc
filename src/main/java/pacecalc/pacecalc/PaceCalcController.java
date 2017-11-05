@@ -31,7 +31,7 @@ public class PaceCalcController {
 			cli.showEnterTimeMsg();
 			timeStr = userInput.next();
 			timeInt = parser.timeStringToInt(timeStr);
-			while(timeInt<0){
+			while(timeInt<=0){
 				cli.showErrorMsg();
 				cli.showEnterTimeMsg();
 				timeStr = userInput.next();

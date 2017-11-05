@@ -84,6 +84,9 @@ public class Parser {
 				}
 				else{
 					timeInt = hours * 3600 + min * 60 + sec;
+					if(timeInt==0){
+						timeInt = -1;	
+					}
 				}
 			} catch (NumberFormatException e)
 			{
@@ -108,6 +111,9 @@ public class Parser {
 				}
 				else{
 				timeInt = min * 60 + sec;
+				if(timeInt==0){
+					timeInt = -1;	
+				}
 				}
 			} catch (NumberFormatException e) {
 				timeInt = -1;
@@ -121,7 +127,7 @@ public class Parser {
 		int distanceInt;
 		try {
 			distanceInt = Integer.parseInt(distanceEnteredP);
-			if (distanceInt < 0) {
+			if (distanceInt < 0 || distanceInt==0) {
 				distanceInt = -1;
 			}
 		} catch (NumberFormatException e) {
