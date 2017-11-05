@@ -90,6 +90,4 @@ public class CLIuserInterface {
 		System.out.println("Calculated! Based on your input distance should be " + distance);
 	}
 
-	
-
 }
