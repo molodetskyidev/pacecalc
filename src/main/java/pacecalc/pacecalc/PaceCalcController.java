@@ -10,7 +10,7 @@ public class PaceCalcController {
 	public PaceCalcController() {
 		// TODO Auto-generated constructor stub
 	}
-	public void CalcFlow(){
+	public void CalcFlow(PaceCalc pacecalc){
 		int timeInt;
 		int distanceInt;
 		int paceInt;
@@ -21,9 +21,8 @@ public class PaceCalcController {
 		CLIuserInterface cli =new CLIuserInterface();
 		cli.showWelcomeMsg();
 		cli.showSelectionMsg();
-		//TODO put all variables declaration at start so I don't need to declare different variables in each case block
 		Scanner userInput=new Scanner(System.in);
-		PaceCalc pacecalc=new PaceCalc();
+		//PaceCalc pacecalc=new PaceCalc();
 		Parser parser=new Parser();
 		int userSelection=userInput.nextInt();
 		//TODO looks like I don't need setters in this function should think about their deletion
@@ -44,7 +43,7 @@ public class PaceCalcController {
 			cli.showContinueMsg();
 			answer=userInput.next();
 			if(answer.equals("yes")){
-				CalcFlow();
+				CalcFlow(pacecalc);
 			}else if(answer.equals("no")){
 			cli.showExitMsg();
 			System.exit(0);
@@ -66,7 +65,7 @@ public class PaceCalcController {
 			cli.showContinueMsg();
 			answer=userInput.next();
 			if(answer.equals("yes")){
-				CalcFlow();
+				CalcFlow(pacecalc);
 			}else if(answer.equals("no")){
 			cli.showExitMsg();
 			System.exit(0);
@@ -88,7 +87,7 @@ public class PaceCalcController {
 			cli.showContinueMsg();
 			answer=userInput.next();
 			if(answer.equals("yes")){
-				CalcFlow();
+				CalcFlow(pacecalc);
 			}else if(answer.equals("no")){
 			cli.showExitMsg();
 			System.exit(0);
@@ -98,7 +97,7 @@ public class PaceCalcController {
 			cli.showExitQuestionMsg();
 			answer=userInput.next();
 			if(answer.equals("no")){
-				CalcFlow();
+				CalcFlow(pacecalc);
 			}else if(answer.equals("yes")){
 			cli.showExitMsg();
 			System.exit(0);
@@ -106,10 +105,10 @@ public class PaceCalcController {
 			break;
 		default: 
 			cli.showErrorMsg();
-			CalcFlow();
+			CalcFlow(pacecalc);
 			break;	
 		}
 		userInput.close();
 	}
-	
+
 }
