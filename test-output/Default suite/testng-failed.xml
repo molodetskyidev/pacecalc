@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="pacecalc.pacecalc.ParserTest">
+      <class name="pacecalc.pacecalc.EventsTest">
         <methods>
-          <include name="testPaceParsingStrins"/>
+          <include name="returnDistanceTest"/>
         </methods>
-      </class> <!-- pacecalc.pacecalc.ParserTest -->
+      </class> <!-- pacecalc.pacecalc.EventsTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
