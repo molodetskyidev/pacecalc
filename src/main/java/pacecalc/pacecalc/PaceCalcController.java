@@ -10,7 +10,7 @@ public class PaceCalcController {
 	public PaceCalcController() {
 		// TODO Auto-generated constructor stub
 	}
-	public static void CalcFlow(){
+	public void CalcFlow(){
 		int timeInt;
 		int distanceInt;
 		int paceInt;
