@@ -6,6 +6,7 @@
       <class name="pacecalc.pacecalc.ParserTest">
         <methods>
           <include name="testPaceParsingStrins"/>
+          <include name="testTimeParsingStrins"/>
         </methods>
       </class> <!-- pacecalc.pacecalc.ParserTest -->
     </classes>
