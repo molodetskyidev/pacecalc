@@ -79,7 +79,7 @@ public class Parser {
 		String delims = ":";
 		String[] time = timeString.split(delims);
 		
-		int timeInt = Integer.parseInt(time[0])*3600+Integer.parseInt(time[1])*60+Integer.parseInt(time[2]);
+		int timeInt = Integer.parseInt(time[0])*60+Integer.parseInt(time[1]);
 		
 		return timeInt;
 	}

@@ -5,7 +5,7 @@
     <classes>
       <class name="pacecalc.pacecalc.ParserTest">
         <methods>
-          <include name="testParsingStrings"/>
+          <include name="testPaceParsingStrins"/>
         </methods>
       </class> <!-- pacecalc.pacecalc.ParserTest -->
     </classes>

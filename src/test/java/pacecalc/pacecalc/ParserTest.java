@@ -197,29 +197,19 @@ public class ParserTest {
 		 */
 
 		Parser parser = new Parser();
-		// only hours
-		int parseTime = parser.paceStringToInt("03:00:00");
-		Assert.assertEquals(10800, parseTime);
-		// hours and minutes
-		parseTime = parser.paceStringToInt("03:23:00");
-		Assert.assertEquals(12180, parseTime);
-		// hours and minutes and seconds
-		parseTime = parser.paceStringToInt("03:23:45");
-		Assert.assertEquals(12225, parseTime);
+		
+		//  minutes and seconds
+		int parseTime = parser.paceStringToInt("05:45");
+		Assert.assertEquals(345, parseTime);
 		// only seconds
-		parseTime = parser.paceStringToInt("00:00:45");
+		parseTime = parser.paceStringToInt("00:45");
 		Assert.assertEquals(45, parseTime);
 		// only minutes
-		parseTime = parser.paceStringToInt("00:23:00");
-		Assert.assertEquals(1380, parseTime);
-		// minutes and seconds
-		parseTime = parser.paceStringToInt("00:23:04");
-		Assert.assertEquals(1384, parseTime);
-		// hours and seconds
-		parseTime = parser.paceStringToInt("03:00:04");
-		Assert.assertEquals(10804, parseTime);
+		parseTime = parser.paceStringToInt("05:00");
+		Assert.assertEquals(300, parseTime);
+		
 		// zero time
-		parseTime = parser.paceStringToInt("00:00:00");
+		parseTime = parser.paceStringToInt("00:00");
 		Assert.assertEquals(0, parseTime);
 	}
 

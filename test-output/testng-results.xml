@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="28" started-at="2017-11-04T19:46:45Z" finished-at="2017-11-04T19:46:45Z">
+  <suite name="Default suite" duration-ms="27" started-at="2017-11-05T08:02:32Z" finished-at="2017-11-05T08:02:32Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="28" started-at="2017-11-04T19:46:45Z" finished-at="2017-11-04T19:46:45Z">
+    <test name="Default test" duration-ms="27" started-at="2017-11-05T08:02:32Z" finished-at="2017-11-05T08:02:32Z">
       <class name="pacecalc.pacecalc.ParserTest">
-        <test-method status="PASS" signature="testDistanceParsingStrins()[pri:0, instance:pacecalc.pacecalc.ParserTest@153f5a29]" name="testDistanceParsingStrins" duration-ms="11" started-at="2017-11-04T21:46:45Z" finished-at="2017-11-04T21:46:45Z">
+        <test-method status="PASS" signature="testDistanceParsingStrins()[pri:0, instance:pacecalc.pacecalc.ParserTest@153f5a29]" name="testDistanceParsingStrins" duration-ms="10" started-at="2017-11-05T10:02:32Z" finished-at="2017-11-05T10:02:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDistanceParsingStrins -->
-        <test-method status="PASS" signature="testPaceParsingStrins()[pri:0, instance:pacecalc.pacecalc.ParserTest@153f5a29]" name="testPaceParsingStrins" duration-ms="1" started-at="2017-11-04T21:46:45Z" finished-at="2017-11-04T21:46:45Z">
+        <test-method status="PASS" signature="testPaceParsingStrins()[pri:0, instance:pacecalc.pacecalc.ParserTest@153f5a29]" name="testPaceParsingStrins" duration-ms="1" started-at="2017-11-05T10:02:32Z" finished-at="2017-11-05T10:02:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testPaceParsingStrins -->
-        <test-method status="PASS" signature="testParseFunctions()[pri:0, instance:pacecalc.pacecalc.ParserTest@153f5a29]" name="testParseFunctions" duration-ms="1" started-at="2017-11-04T21:46:45Z" finished-at="2017-11-04T21:46:45Z">
+        <test-method status="PASS" signature="testParseFunctions()[pri:0, instance:pacecalc.pacecalc.ParserTest@153f5a29]" name="testParseFunctions" duration-ms="1" started-at="2017-11-05T10:02:32Z" finished-at="2017-11-05T10:02:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testParseFunctions -->
-        <test-method status="PASS" signature="testTimeParsingStrins()[pri:0, instance:pacecalc.pacecalc.ParserTest@153f5a29]" name="testTimeParsingStrins" duration-ms="1" started-at="2017-11-04T21:46:45Z" finished-at="2017-11-04T21:46:45Z">
+        <test-method status="PASS" signature="testTimeParsingStrins()[pri:0, instance:pacecalc.pacecalc.ParserTest@153f5a29]" name="testTimeParsingStrins" duration-ms="1" started-at="2017-11-05T10:02:32Z" finished-at="2017-11-05T10:02:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testTimeParsingStrins -->
