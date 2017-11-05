@@ -1,29 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" total="14" passed="14">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="26" started-at="2017-11-05T19:32:55Z" finished-at="2017-11-05T19:32:55Z">
+  <suite name="Suite" duration-ms="91" started-at="2017-11-05T19:59:02Z" finished-at="2017-11-05T19:59:02Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="26" started-at="2017-11-05T19:32:55Z" finished-at="2017-11-05T19:32:55Z">
+    <test name="Test" duration-ms="91" started-at="2017-11-05T19:59:02Z" finished-at="2017-11-05T19:59:02Z">
+      <class name="pacecalc.pacecalc.KmToMileConvertorTest">
+        <test-method status="PASS" signature="convertKMtoMileTest()[pri:0, instance:pacecalc.pacecalc.KmToMileConvertorTest@5afa04c]" name="convertKMtoMileTest" duration-ms="4" started-at="2017-11-05T21:59:02Z" finished-at="2017-11-05T21:59:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- convertKMtoMileTest -->
+        <test-method status="PASS" signature="convertMileToKmTest()[pri:0, instance:pacecalc.pacecalc.KmToMileConvertorTest@5afa04c]" name="convertMileToKmTest" duration-ms="2" started-at="2017-11-05T21:59:02Z" finished-at="2017-11-05T21:59:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- convertMileToKmTest -->
+        <test-method status="PASS" signature="convertSpeedKmToMileTest()[pri:0, instance:pacecalc.pacecalc.KmToMileConvertorTest@5afa04c]" name="convertSpeedKmToMileTest" duration-ms="2" started-at="2017-11-05T21:59:02Z" finished-at="2017-11-05T21:59:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- convertSpeedKmToMileTest -->
+        <test-method status="PASS" signature="convertSpeedMphToKmH()[pri:0, instance:pacecalc.pacecalc.KmToMileConvertorTest@5afa04c]" name="convertSpeedMphToKmH" duration-ms="2" started-at="2017-11-05T21:59:02Z" finished-at="2017-11-05T21:59:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- convertSpeedMphToKmH -->
+      </class> <!-- pacecalc.pacecalc.KmToMileConvertorTest -->
+      <class name="pacecalc.pacecalc.EventsTest">
+        <test-method status="PASS" signature="returnDistanceTest()[pri:0, instance:pacecalc.pacecalc.EventsTest@458ad742]" name="returnDistanceTest" duration-ms="2" started-at="2017-11-05T21:59:02Z" finished-at="2017-11-05T21:59:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- returnDistanceTest -->
+      </class> <!-- pacecalc.pacecalc.EventsTest -->
+      <class name="pacecalc.pacecalc.PaceCalcTest">
+        <test-method status="PASS" signature="testCalcDistance()[pri:0, instance:pacecalc.pacecalc.PaceCalcTest@6ea12c19]" name="testCalcDistance" duration-ms="17" started-at="2017-11-05T21:59:02Z" finished-at="2017-11-05T21:59:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCalcDistance -->
+        <test-method status="PASS" signature="testCalcPace()[pri:0, instance:pacecalc.pacecalc.PaceCalcTest@6ea12c19]" name="testCalcPace" duration-ms="2" started-at="2017-11-05T21:59:02Z" finished-at="2017-11-05T21:59:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCalcPace -->
+        <test-method status="PASS" signature="testCalcSpeed()[pri:0, instance:pacecalc.pacecalc.PaceCalcTest@6ea12c19]" name="testCalcSpeed" duration-ms="2" started-at="2017-11-05T21:59:02Z" finished-at="2017-11-05T21:59:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCalcSpeed -->
+        <test-method status="PASS" signature="testCalcTime()[pri:0, instance:pacecalc.pacecalc.PaceCalcTest@6ea12c19]" name="testCalcTime" duration-ms="2" started-at="2017-11-05T21:59:02Z" finished-at="2017-11-05T21:59:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCalcTime -->
+        <test-method status="PASS" signature="testSetGet()[pri:0, instance:pacecalc.pacecalc.PaceCalcTest@6ea12c19]" name="testSetGet" duration-ms="3" started-at="2017-11-05T21:59:02Z" finished-at="2017-11-05T21:59:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSetGet -->
+      </class> <!-- pacecalc.pacecalc.PaceCalcTest -->
       <class name="pacecalc.pacecalc.ParserTest">
-        <test-method status="PASS" signature="testDistanceParsingStrins()[pri:0, instance:pacecalc.pacecalc.ParserTest@153f5a29]" name="testDistanceParsingStrins" duration-ms="10" started-at="2017-11-05T21:32:55Z" finished-at="2017-11-05T21:32:55Z">
+        <test-method status="PASS" signature="testDistanceParsingStrins()[pri:0, instance:pacecalc.pacecalc.ParserTest@7f560810]" name="testDistanceParsingStrins" duration-ms="4" started-at="2017-11-05T21:59:02Z" finished-at="2017-11-05T21:59:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDistanceParsingStrins -->
-        <test-method status="PASS" signature="testPaceParsingStrins()[pri:0, instance:pacecalc.pacecalc.ParserTest@153f5a29]" name="testPaceParsingStrins" duration-ms="1" started-at="2017-11-05T21:32:55Z" finished-at="2017-11-05T21:32:55Z">
+        <test-method status="PASS" signature="testPaceParsingStrins()[pri:0, instance:pacecalc.pacecalc.ParserTest@7f560810]" name="testPaceParsingStrins" duration-ms="2" started-at="2017-11-05T21:59:02Z" finished-at="2017-11-05T21:59:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testPaceParsingStrins -->
-        <test-method status="PASS" signature="testParseFunctions()[pri:0, instance:pacecalc.pacecalc.ParserTest@153f5a29]" name="testParseFunctions" duration-ms="1" started-at="2017-11-05T21:32:55Z" finished-at="2017-11-05T21:32:55Z">
+        <test-method status="PASS" signature="testParseFunctions()[pri:0, instance:pacecalc.pacecalc.ParserTest@7f560810]" name="testParseFunctions" duration-ms="3" started-at="2017-11-05T21:59:02Z" finished-at="2017-11-05T21:59:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testParseFunctions -->
-        <test-method status="PASS" signature="testTimeParsingStrins()[pri:0, instance:pacecalc.pacecalc.ParserTest@153f5a29]" name="testTimeParsingStrins" duration-ms="1" started-at="2017-11-05T21:32:55Z" finished-at="2017-11-05T21:32:55Z">
+        <test-method status="PASS" signature="testTimeParsingStrins()[pri:0, instance:pacecalc.pacecalc.ParserTest@7f560810]" name="testTimeParsingStrins" duration-ms="2" started-at="2017-11-05T21:59:02Z" finished-at="2017-11-05T21:59:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testTimeParsingStrins -->
       </class> <!-- pacecalc.pacecalc.ParserTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

@@ -1,5 +1,6 @@
 package pacecalc.pacecalc;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import util.Parser;
@@ -148,6 +149,10 @@ public class PaceCalcController {
 		}
 		}
 		catch(NumberFormatException e){
+			cli.showErrorMsg();
+			CalcFlow(pacecalc, cli);
+		}
+		catch(InputMismatchException e){
 			cli.showErrorMsg();
 			CalcFlow(pacecalc, cli);
 		}
