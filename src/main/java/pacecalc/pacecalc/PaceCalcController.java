@@ -112,7 +112,4 @@ public class PaceCalcController {
 		userInput.close();
 	}
 	
-   public static void main(String[] args) {
-	   CalcFlow();
-}
 }
