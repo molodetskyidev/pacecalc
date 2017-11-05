@@ -53,12 +53,17 @@ public class PaceCalcController {
 			cli.showCalculatedPace(paceStr);
 			cli.showContinueMsg();
 			answer = userInput.next();
+			while(answer.equals("yes") || answer.equals("no")){
+				cli.showErrorMsg();
+				cli.showContinueMsg();
+				answer = userInput.next();
+			}
 			if (answer.equals("yes")) {
 				CalcFlow(pacecalc, cli);
 			} else if (answer.equals("no")) {
 				cli.showExitMsg();
 				System.exit(0);
-			}
+			} 
 			break;
 		case 2:
 			cli.showCalculateTimeMsg();
@@ -88,6 +93,11 @@ public class PaceCalcController {
 			cli.showCalculatedTime(timeStr);
 			cli.showContinueMsg();
 			answer = userInput.next();
+			while(answer.equals("yes") || answer.equals("no")){
+				cli.showErrorMsg();
+				cli.showContinueMsg();
+				answer = userInput.next();
+			}
 			if (answer.equals("yes")) {
 				CalcFlow(pacecalc, cli);
 			} else if (answer.equals("no")) {
@@ -124,6 +134,11 @@ public class PaceCalcController {
 			cli.showCalculatedDistance(distanceStr);
 			cli.showContinueMsg();
 			answer = userInput.next();
+			while(answer.equals("yes") || answer.equals("no")){
+				cli.showErrorMsg();
+				cli.showContinueMsg();
+				answer = userInput.next();
+			}
 			if (answer.equals("yes")) {
 				CalcFlow(pacecalc, cli);
 			} else if (answer.equals("no")) {
@@ -135,6 +150,11 @@ public class PaceCalcController {
 		case 0:
 			cli.showExitQuestionMsg();
 			answer = userInput.next();
+			while(answer.equals("yes") || answer.equals("no")){
+				cli.showErrorMsg();
+				cli.showExitQuestionMsg();
+				answer = userInput.next();
+			}
 			if (answer.equals("no")) {
 				CalcFlow(pacecalc, cli);
 			} else if (answer.equals("yes")) {
