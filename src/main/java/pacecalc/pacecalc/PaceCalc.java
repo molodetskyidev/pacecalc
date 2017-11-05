@@ -66,7 +66,7 @@ public class PaceCalc {
 		return resultTime;
 	}
 
-	// method for Speed caluclation based on pace
+	// method for Speed calculation based on pace
 
 	protected double calcSpeed(int pace) {
 		double resultSpeed;
