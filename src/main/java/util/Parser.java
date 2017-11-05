@@ -10,8 +10,7 @@ public class Parser {
 		String timeHours;
 		String timeMin;
 		String timeSec;
-
-		String returnTime;
+        String returnTime;
 		timeHours = LeadingZero(time / 3600);
 		timeMin = LeadingZero((time % 3600) / 60);
 		timeSec = LeadingZero((time % 3600) % 60);
