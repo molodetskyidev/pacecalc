@@ -4,7 +4,7 @@ public class App
 
 {
 	public static void main(String[] args) {
-		
+		//test commit and push
 		try{
 			if(args[0].equals("-cli")){
 			PaceCalcController pcController = new PaceCalcController();
