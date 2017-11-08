@@ -21,8 +21,10 @@ public class App
 			}
 
 		} catch (ArrayIndexOutOfBoundsException e) {
-			System.out.println(
-					"UI is not implemented yet. In order to use application in command line, please run application with paramenter -cli");
+			PaceCalcController pcController = new PaceCalcController();
+			PaceCalcUI ui = new PaceCalcUI();
+			PaceCalc pacecalc = new PaceCalc();
+			pcController.CalcFlow(pacecalc, ui);
 		}
 
 	}
