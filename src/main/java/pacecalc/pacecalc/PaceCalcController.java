@@ -29,9 +29,7 @@ public class PaceCalcController {
 		Parser parser = new Parser();
 		try {
 			int userSelection = userInput.nextInt();
-			// TODO looks like I don't need setters in this function should
-			// think
-			// about their deletion
+
 			switch (userSelection) {
 			case 1:
 				cli.showCalculatePaceMsg();
