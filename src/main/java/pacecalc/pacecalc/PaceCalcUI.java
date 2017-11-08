@@ -58,6 +58,8 @@ public class PaceCalcUI extends JFrame {
 		rbDistance.setActionCommand("distance");
 
 		ListenerForRadioButton lForRadioButton = new ListenerForRadioButton();
+		ListenerForExitButton lForExitButton = new ListenerForExitButton();
+		btnExit.addActionListener(lForExitButton);
 		rbPace.addActionListener(lForRadioButton);
 		rbTime.addActionListener(lForRadioButton);
 		rbDistance.addActionListener(lForRadioButton);
@@ -94,6 +96,17 @@ public class PaceCalcUI extends JFrame {
 
 	}
 
+	class ListenerForExitButton implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			if (e.getSource() == btnExit) {
+				System.exit(0);
+			}
+		}
+
+	}
+
 	class ListenerForRadioButton implements ActionListener {
 
 		@Override
@@ -113,5 +126,6 @@ public class PaceCalcUI extends JFrame {
 				txtDistance.setEnabled(false);
 			}
 		}
+
 	}
 }

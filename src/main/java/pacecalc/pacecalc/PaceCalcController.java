@@ -200,4 +200,5 @@ public class PaceCalcController {
 			// here should be model and view methods
 		}
 	}
+
 }
