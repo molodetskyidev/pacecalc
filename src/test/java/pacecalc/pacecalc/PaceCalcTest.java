@@ -163,24 +163,24 @@ public class PaceCalcTest {
 		double speed;
 
 		// simple usual pace and time
-
-		speed = mycalc.calcSpeed(360);
+		mycalc.setPace(360);
+		speed = mycalc.calcSpeed();
 		Assert.assertEquals("Test simple usual pace Wrong speed! ", 10.0, speed);
 
 		// small pace and big time
-
-		speed = mycalc.calcSpeed(10);
+		mycalc.setPace(10);
+		speed = mycalc.calcSpeed();
 		Assert.assertEquals("Test distance small pace Wrong speed! ", 360.0, speed);
 
 		// halfmarathon 5min/km pace
-
-		speed = mycalc.calcSpeed(300);
+		mycalc.setPace(300);
+		speed = mycalc.calcSpeed();
 		Assert.assertEquals("Test halfmarathon  5min/km pace Wrong speed! ", 12.0, speed);
 
 		// big pace
-
-		speed = mycalc.calcSpeed(36000);
-		Assert.assertEquals("Test halfmarathon by 1 hour Wrong speed! ", 0.1, speed);
+		mycalc.setPace(36000);
+		speed = mycalc.calcSpeed();
+		Assert.assertEquals("big pace Wrong speed! ", 0.1, speed);
 
 	}
 }

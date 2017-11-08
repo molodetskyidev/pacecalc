@@ -74,8 +74,9 @@ public class PaceCalc {
 
 	// method for Speed calculation based on pace
 
-	protected double calcSpeed(int pace) {
+	protected double calcSpeed() {
 		double resultSpeed;
+		pace = this.getPace();
 		resultSpeed = (double) (3600) / (double) (pace);
 		return resultSpeed;
 	}
