@@ -1,11 +1,17 @@
 package pacecalc.pacecalc;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import util.Parser;
 
 public class PaceCalcController {
+
+	private PaceCalc pacecalc;
+	private CLIuserInterface cli;
+	private PaceCalcUI ui;
 
 	public void CalcFlow(PaceCalc pacecalc, CLIuserInterface cli) {
 		int timeInt;
@@ -179,4 +185,19 @@ public class PaceCalcController {
 		userInput.close();
 	}
 
+	public void CalcFlow(PaceCalc pacecalc, PaceCalcUI ui) {
+
+		this.ui = ui;
+		this.pacecalc = pacecalc;
+		this.ui.addCalcListener(new lForButton());
+	}
+
+	class lForButton implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+
+			// here should be model and view methods
+		}
+	}
 }
