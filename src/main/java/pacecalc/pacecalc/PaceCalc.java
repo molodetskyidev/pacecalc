@@ -44,7 +44,9 @@ public class PaceCalc {
 
 	// method for Pace calculation based on distance and time
 
-	protected int calcPace(int distance, int time) {
+	protected int calcPace() {
+		int distance = this.getDistance();
+		int time = this.getTime();
 		int resultPace;
 		resultPace = (int) (1000 * time / distance);
 		return resultPace;
@@ -52,7 +54,9 @@ public class PaceCalc {
 
 	// method for Distance calculation based on pace and time
 
-	protected int calcDistance(int pace, int time) {
+	protected int calcDistance() {
+		int pace = this.getPace();
+		int time = this.getTime();
 		int resultDistance;
 		resultDistance = (int) (1000 * time / pace);
 		return resultDistance;
@@ -60,8 +64,10 @@ public class PaceCalc {
 
 	// method for Time calculation based on distance and pace
 
-	protected int calcTime(int pace, int distance) {
+	protected int calcTime() {
 		int resultTime;
+		int pace = this.getPace();
+		int distance = this.getDistance();
 		resultTime = (int) (pace * distance / 1000);
 		return resultTime;
 	}

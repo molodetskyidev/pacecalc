@@ -19,7 +19,7 @@ public class PaceCalcController {
 		cli.showWelcomeMsg();
 		cli.showSelectionMsg();
 		Scanner userInput = new Scanner(System.in);
-		// PaceCalc pacecalc=new PaceCalc();
+
 		Parser parser = new Parser();
 		try {
 			int userSelection = userInput.nextInt();
@@ -38,7 +38,7 @@ public class PaceCalcController {
 					timeStr = userInput.next();
 					timeInt = parser.timeStringToInt(timeStr);
 				}
-				// pacecalc.setTime(timeInt);
+				pacecalc.setTime(timeInt);
 				cli.showEnterDistanceMsg();
 				distanceStr = userInput.next();
 				distanceInt = parser.distanceStringToInt(distanceStr);
@@ -48,8 +48,8 @@ public class PaceCalcController {
 					distanceStr = userInput.next();
 					distanceInt = parser.distanceStringToInt(distanceStr);
 				}
-				// pacecalc.setTime(distanceInt);
-				paceInt = pacecalc.calcPace(distanceInt, timeInt);
+				pacecalc.setDistance(distanceInt);
+				paceInt = pacecalc.calcPace();
 				paceStr = parser.parseFromPace(paceInt);
 				cli.showCalculatedPace(paceStr);
 				cli.showContinueMsg();
@@ -88,8 +88,9 @@ public class PaceCalcController {
 					paceStr = userInput.next();
 					paceInt = parser.paceStringToInt(paceStr);
 				}
-				// pacecalc.setPace(paceInt);
-				timeInt = pacecalc.calcTime(paceInt, distanceInt);
+				pacecalc.setPace(paceInt);
+				pacecalc.setDistance(distanceInt);
+				timeInt = pacecalc.calcTime();
 				timeStr = parser.parseFromTime(timeInt);
 				cli.showCalculatedTime(timeStr);
 				cli.showContinueMsg();
@@ -119,7 +120,7 @@ public class PaceCalcController {
 					paceInt = parser.paceStringToInt(paceStr);
 				}
 
-				// pacecalc.setPace(paceInt);
+				pacecalc.setPace(paceInt);
 				cli.showEnterTimeMsg();
 				timeStr = userInput.next();
 				timeInt = parser.timeStringToInt(timeStr);
@@ -129,8 +130,8 @@ public class PaceCalcController {
 					timeStr = userInput.next();
 					timeInt = parser.timeStringToInt(timeStr);
 				}
-				// pacecalc.setTime(timeInt);
-				distanceInt = pacecalc.calcDistance(paceInt, timeInt);
+				pacecalc.setTime(timeInt);
+				distanceInt = pacecalc.calcDistance();
 				distanceStr = parser.parseFromDistance(distanceInt);
 				cli.showCalculatedDistance(distanceStr);
 				cli.showContinueMsg();

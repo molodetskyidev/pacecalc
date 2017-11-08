@@ -1,6 +1,7 @@
 package pacecalc.pacecalc;
 
-import org.testng.annotations.*;
+import org.testng.annotations.Test;
+
 import junit.framework.Assert;
 
 public class PaceCalcTest {
@@ -69,16 +70,24 @@ public class PaceCalcTest {
 		int pace;
 
 		// simple usual distance and time
-		pace = mycalc.calcPace(10000, 3600);
+		mycalc.setDistance(10000);
+		mycalc.setTime(3600);
+		pace = mycalc.calcPace();
 		Assert.assertEquals("Test simple usual distance and time Wrong pace! ", 360, pace);
 		// small distance and big time
-		pace = mycalc.calcPace(10, 3600);
+		mycalc.setDistance(10);
+		mycalc.setTime(3600);
+		pace = mycalc.calcPace();
 		Assert.assertEquals("Test distance small, long time Wrong pace! ", 360000, pace);
 		// halfmarathon distance and 1 hr time
-		pace = mycalc.calcPace(21097, 3600);
+		mycalc.setDistance(21097);
+		mycalc.setTime(3600);
+		pace = mycalc.calcPace();
 		Assert.assertEquals("Test halfmarathon by 1 hour Wrong pace! ", 170, pace);
+		mycalc.setDistance(21097);
+		mycalc.setTime(1);
 		// small time and big distance
-		pace = mycalc.calcPace(21097, 1);
+		pace = mycalc.calcPace();
 		Assert.assertEquals("Test halfmarathon by 1 hour Wrong pace! ", 0, pace);
 
 	}
@@ -90,18 +99,27 @@ public class PaceCalcTest {
 		int distance;
 
 		// simple usual pace and time
-		distance = mycalc.calcDistance(360, 3600);
+		mycalc.setTime(3600);
+		mycalc.setPace(360);
+		distance = mycalc.calcDistance();
 		Assert.assertEquals("Test simple usual pace and time Wrong distance! ", 10000, distance);
 
 		// small pace and big time
-		distance = mycalc.calcDistance(10, 3600);
+		mycalc.setTime(3600);
+		mycalc.setPace(10);
+		distance = mycalc.calcDistance();
 		Assert.assertEquals("Test pace small, long time Wrong distance! ", 360000, distance);
+
 		// halfmarathon pace and 1:30 hr time
-		distance = mycalc.calcDistance(256, 5401);
+		mycalc.setTime(5401);
+		mycalc.setPace(256);
+		distance = mycalc.calcDistance();
 		Assert.assertEquals("Test halfmarathon pace by 1:30 hour Wrong distance! ", 21097, distance);
 		// small time and big pace
-		distance = mycalc.calcDistance(720, 20);
-		Assert.assertEquals("Test small time and big pace Wrong distance! ", 27, distance);
+		mycalc.setTime(10);
+		mycalc.setPace(3599);
+		distance = mycalc.calcDistance();
+		Assert.assertEquals("Test small time and big pace Wrong distance! ", 2, distance);
 
 	}
 
@@ -111,24 +129,29 @@ public class PaceCalcTest {
 		PaceCalc mycalc = new PaceCalc();
 		int time;
 
-		// simple usual pace and time
+		// simple usual pace and distance
+		mycalc.setPace(360);
+		mycalc.setDistance(10000);
 
-		time = mycalc.calcTime(360, 10000);
+		time = mycalc.calcTime();
 		Assert.assertEquals("Test simple usual distance and time Wrong time! ", 3600, time);
 
 		// small pace and big distance
-
-		time = mycalc.calcTime(10, 42195);
+		mycalc.setPace(10);
+		mycalc.setDistance(42195);
+		time = mycalc.calcTime();
 		Assert.assertEquals("Test distance small, long time Wrong time! ", 421, time);
 
 		// halfmarathon distance and 5min/km pace
-
-		time = mycalc.calcTime(21097, 300);
+		mycalc.setPace(300);
+		mycalc.setDistance(21097);
+		time = mycalc.calcTime();
 		Assert.assertEquals("Test halfmarathon distance and 5min/km pace Wrong time! ", 6329, time);
 
 		// small distance and big pace
-
-		time = mycalc.calcTime(10, 36000);
+		mycalc.setPace(36000);
+		mycalc.setDistance(10);
+		time = mycalc.calcTime();
 		Assert.assertEquals("Test halfmarathon by 1 hour Wrong time! ", 360, time);
 
 	}
