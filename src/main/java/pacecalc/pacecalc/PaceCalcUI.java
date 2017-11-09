@@ -44,7 +44,7 @@ public class PaceCalcUI extends JFrame {
 
 		lblPace = new JLabel("Enter pace in format mm:ss");
 		lblTime = new JLabel("Enter time in format hh:mm:ss");
-		lblDistance = new JLabel("Enter distance in meters(should be integer value");
+		lblDistance = new JLabel("Enter distance in meters(should be integer value)");
 
 		txtTime = new JTextField(20);
 		txtPace = new JTextField(20);
