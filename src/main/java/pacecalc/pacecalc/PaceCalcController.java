@@ -246,7 +246,7 @@ public class PaceCalcController {
 						pacecalc.setTime(timeInt);
 						pacecalc.setPace(paceInt);
 						distanceInt = pacecalc.calcDistance();
-						distanceStr = parser.parseFromTime(distanceInt);
+						distanceStr = parser.parseFromDistance(distanceInt);
 						ui.setDistance(distanceStr);
 
 					}
