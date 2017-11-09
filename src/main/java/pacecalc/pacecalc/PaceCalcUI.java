@@ -1,5 +1,6 @@
 package pacecalc.pacecalc;
 
+import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -32,12 +33,12 @@ public class PaceCalcUI extends JFrame {
 
 	public PaceCalcUI() {
 
-		this.setSize(400, 300);
+		this.setSize(360, 300);
 		this.setLocationRelativeTo(null);
 		this.setResizable(false);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		panelMain = new JPanel();
-
+		panelMain.setLayout(new FlowLayout(FlowLayout.LEFT));
 		btnCalc = new JButton("Calculate");
 
 		btnExit = new JButton("Exit");
