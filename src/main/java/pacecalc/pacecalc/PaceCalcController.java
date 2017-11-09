@@ -188,16 +188,33 @@ public class PaceCalcController {
 
 		this.ui = ui;
 		this.pacecalc = pacecalc;
-		this.ui.addCalcListener(new lForButton());
+		this.ui.addCalcListener(new Calculate());
+		this.ui.addExitListener(new Exit());
 	}
 
-	class lForButton implements ActionListener {
+	class Calculate implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
 
 			// here should be model and view methods
+
 		}
+
+	}
+
+	class Exit implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			int userExit = ui.showExitMessage();
+
+			if (userExit == 0) {
+				System.exit(0);
+			}
+
+		}
+
 	}
 
 }

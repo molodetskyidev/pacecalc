@@ -7,6 +7,7 @@ import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
@@ -26,6 +27,8 @@ public class PaceCalcUI extends JFrame {
 	JLabel lblTime;
 	JLabel lblPace;
 	JLabel lblDistance;
+	JOptionPane exitMessage;
+	JOptionPane errorMessage;
 
 	public PaceCalcUI() {
 
@@ -58,8 +61,7 @@ public class PaceCalcUI extends JFrame {
 		rbDistance.setActionCommand("distance");
 
 		ListenerForRadioButton lForRadioButton = new ListenerForRadioButton();
-		ListenerForExitButton lForExitButton = new ListenerForExitButton();
-		btnExit.addActionListener(lForExitButton);
+
 		rbPace.addActionListener(lForRadioButton);
 		rbTime.addActionListener(lForRadioButton);
 		rbDistance.addActionListener(lForRadioButton);
@@ -92,19 +94,25 @@ public class PaceCalcUI extends JFrame {
 
 	void addCalcListener(ActionListener lForButton) {
 		btnCalc.addActionListener(lForButton);
-		btnExit.addActionListener(lForButton);
 
 	}
 
-	class ListenerForExitButton implements ActionListener {
+	void addExitListener(ActionListener ExitButton) {
+		btnExit.addActionListener(ExitButton);
+	}
 
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			if (e.getSource() == btnExit) {
-				System.exit(0);
-			}
-		}
+	int showExitMessage() {
+		Object[] options = { "Yes", "No" };
+		int userChoice = JOptionPane.showOptionDialog(this, "Are you sure you would like to exit PaceCalculator?",
+				"Confirm please", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
 
+		return userChoice;
+	}
+
+	void showErrorMessage() {
+		Object[] options = { "OK" };
+		JOptionPane.showOptionDialog(this, "Your input was wrong, please enter correct values in correct format",
+				"Error", JOptionPane.OK_OPTION, JOptionPane.ERROR_MESSAGE, null, options, options[0]);
 	}
 
 	class ListenerForRadioButton implements ActionListener {
