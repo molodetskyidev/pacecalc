@@ -38,6 +38,7 @@ public class Parser {
 			leadingZero = "00";
 		}
 		returnDistance = Integer.toString(returnDistanceKm) + "." + leadingZero + Integer.toString(returnDistanceM);
+
 		return returnDistance;
 	}
 
@@ -75,21 +76,19 @@ public class Parser {
 			timeInt = -1;
 		} else {
 			try {
-				
-			    int hours=Integer.parseInt(time[0]);
+
+				int hours = Integer.parseInt(time[0]);
 				int min = Integer.parseInt(time[1]);
 				int sec = Integer.parseInt(time[2]);
-				if (hours>60 || min > 60 || sec > 60 || min<0 || sec<0 || hours<0) {
+				if (hours > 60 || min > 60 || sec > 60 || min < 0 || sec < 0 || hours < 0) {
 					timeInt = -1;
-				}
-				else{
+				} else {
 					timeInt = hours * 3600 + min * 60 + sec;
-					if(timeInt==0){
-						timeInt = -1;	
+					if (timeInt == 0) {
+						timeInt = -1;
 					}
 				}
-			} catch (NumberFormatException e)
-			{
+			} catch (NumberFormatException e) {
 				timeInt = -1;
 			}
 		}
@@ -106,14 +105,13 @@ public class Parser {
 			try {
 				int min = Integer.parseInt(time[0]);
 				int sec = Integer.parseInt(time[1]);
-				if (min > 60 || sec > 60 || min<0 || sec<0) {
+				if (min > 60 || sec > 60 || min < 0 || sec < 0) {
 					timeInt = -1;
-				}
-				else{
-				timeInt = min * 60 + sec;
-				if(timeInt==0){
-					timeInt = -1;	
-				}
+				} else {
+					timeInt = min * 60 + sec;
+					if (timeInt == 0) {
+						timeInt = -1;
+					}
 				}
 			} catch (NumberFormatException e) {
 				timeInt = -1;
@@ -127,7 +125,7 @@ public class Parser {
 		int distanceInt;
 		try {
 			distanceInt = Integer.parseInt(distanceEnteredP);
-			if (distanceInt < 0 || distanceInt==0) {
+			if (distanceInt < 0 || distanceInt == 0) {
 				distanceInt = -1;
 			}
 		} catch (NumberFormatException e) {

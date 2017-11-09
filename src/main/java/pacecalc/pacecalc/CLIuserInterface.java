@@ -87,7 +87,7 @@ public class CLIuserInterface {
 	}
 
 	public void showCalculatedDistance(String distance) {
-		System.out.println("Calculated! Based on your input distance should be " + distance);
+		System.out.println("Calculated! Based on your input distance should be " + distance + " km");
 	}
 
 }
