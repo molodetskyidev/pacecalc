@@ -116,6 +116,43 @@ public class PaceCalcUI extends JFrame {
 				"Error", JOptionPane.OK_OPTION, JOptionPane.ERROR_MESSAGE, null, options, options[0]);
 	}
 
+	String getTime() {
+		return txtTime.getText();
+	}
+
+	String getPace() {
+
+		return txtPace.getText();
+	}
+
+	String getDistance() {
+		return txtDistance.getText();
+	}
+
+	void setTime(String time) {
+		txtTime.setText(time);
+	}
+
+	void setDistance(String distance) {
+		txtDistance.setText(distance);
+	}
+
+	void setPace(String pace) {
+		txtPace.setText(pace);
+	}
+
+	int getCalcSelection() {
+		int userCalcSelecton = 1;
+		if (rbPace.isSelected()) {
+			userCalcSelecton = 1;
+		} else if (rbTime.isSelected()) {
+			userCalcSelecton = 2;
+		} else if (rbDistance.isSelected()) {
+			userCalcSelecton = 3;
+		}
+		return userCalcSelecton;
+	}
+
 	class ListenerForRadioButton implements ActionListener {
 
 		@Override

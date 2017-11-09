@@ -42,7 +42,7 @@ public class PaceCalcController {
 					timeStr = userInput.next();
 					timeInt = parser.timeStringToInt(timeStr);
 				}
-				pacecalc.setTime(timeInt);
+
 				cli.showEnterDistanceMsg();
 				distanceStr = userInput.next();
 				distanceInt = parser.distanceStringToInt(distanceStr);
@@ -53,6 +53,7 @@ public class PaceCalcController {
 					distanceInt = parser.distanceStringToInt(distanceStr);
 				}
 				pacecalc.setDistance(distanceInt);
+				pacecalc.setTime(timeInt);
 				paceInt = pacecalc.calcPace();
 				paceStr = parser.parseFromPace(paceInt);
 				cli.showCalculatedPace(paceStr);
@@ -81,8 +82,6 @@ public class PaceCalcController {
 					distanceStr = userInput.next();
 					distanceInt = parser.distanceStringToInt(distanceStr);
 				}
-
-				// pacecalc.setDistance(distanceInt);
 				cli.showEnterPaceMsg();
 				paceStr = userInput.next();
 				paceInt = parser.paceStringToInt(paceStr);
@@ -188,6 +187,7 @@ public class PaceCalcController {
 
 		this.ui = ui;
 		this.pacecalc = pacecalc;
+
 		this.ui.addCalcListener(new Calculate());
 		this.ui.addExitListener(new Exit());
 	}
@@ -196,8 +196,65 @@ public class PaceCalcController {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			int timeInt;
+			int distanceInt;
+			int paceInt;
+			String timeStr;
+			String distanceStr;
+			String paceStr;
+			Parser parser = new Parser();
+			try {
+				switch (ui.getCalcSelection()) {
+				case 1:
+					timeStr = ui.getTime();
+					distanceStr = ui.getDistance();
+					timeInt = parser.timeStringToInt(timeStr);
+					distanceInt = parser.distanceStringToInt(distanceStr);
+					if (timeInt < 0 || distanceInt < 0) {
+						ui.showErrorMessage();
+					} else {
+						pacecalc.setDistance(distanceInt);
+						pacecalc.setTime(timeInt);
+						paceInt = pacecalc.calcPace();
+						paceStr = parser.parseFromPace(paceInt);
+						ui.setPace(paceStr);
+					}
+					break;
+				case 2:
+					paceStr = ui.getPace();
+					distanceStr = ui.getDistance();
+					paceInt = parser.paceStringToInt(paceStr);
+					distanceInt = parser.distanceStringToInt(distanceStr);
+					if (paceInt < 0 || distanceInt < 0) {
+						ui.showErrorMessage();
+					} else {
+						pacecalc.setDistance(distanceInt);
+						pacecalc.setPace(paceInt);
+						timeInt = pacecalc.calcTime();
+						timeStr = parser.parseFromTime(timeInt);
+						ui.setTime(timeStr);
+					}
+					break;
+				case 3:
+					paceStr = ui.getPace();
+					timeStr = ui.getTime();
+					paceInt = parser.paceStringToInt(paceStr);
+					timeInt = parser.timeStringToInt(timeStr);
+					if (paceInt < 0 || timeInt < 0) {
+						ui.showErrorMessage();
+					} else {
+						pacecalc.setTime(timeInt);
+						pacecalc.setPace(paceInt);
+						distanceInt = pacecalc.calcDistance();
+						distanceStr = parser.parseFromTime(distanceInt);
+						ui.setDistance(distanceStr);
 
-			// here should be model and view methods
+					}
+					break;
+				}
+			} catch (Exception error) {
+				ui.showErrorMessage();
+			}
 
 		}
 
