@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite">
+<suite name="Suite" parallel="false">
   <test name="Test">
     <classes>
-      <class name="pacecalc.pacecalc.PaceCalcTest"/>
+      <class name="pacecalc.PaceCalcTest"/>
+      <class name="pacecalc.ParserTest"/>
+      <class name="pacecalc.KmToMileConvertorTest" />
+      <class name="pacecalc.EventsTest" />
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
