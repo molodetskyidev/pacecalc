@@ -275,10 +275,10 @@ public class ParserTest {
 		// small value
 		distance = parser.distanceStringToInt("1");
 		Assert.assertEquals(1, distance);
-		
+
 		// zero value
-				distance = parser.distanceStringToInt("0");
-				Assert.assertEquals(-1, distance);
+		distance = parser.distanceStringToInt("0");
+		Assert.assertEquals(-1, distance);
 
 		// non-integer value
 		distance = parser.distanceStringToInt("marathon");

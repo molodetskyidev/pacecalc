@@ -1,11 +1,16 @@
 package pacecalc.pacecalc;
 
-import java.awt.FlowLayout;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.BorderFactory;
+import javax.swing.Box;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -32,33 +37,35 @@ public class PaceCalcUI extends JFrame {
 	JOptionPane errorMessage;
 
 	public PaceCalcUI() {
-
-		this.setSize(360, 300);
-		this.setLocationRelativeTo(null);
+		this.setSize(580, 200);
 		this.setResizable(false);
+		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
 		panelMain = new JPanel();
-		panelMain.setLayout(new FlowLayout(FlowLayout.LEFT));
+
+		panelMain.setLayout(new GridBagLayout());
+
 		btnCalc = new JButton("Calculate");
 
 		btnExit = new JButton("Exit");
 
 		lblPace = new JLabel("Enter pace in format mm:ss");
 		lblTime = new JLabel("Enter time in format hh:mm:ss");
-		lblDistance = new JLabel("Enter distance in meters(should be integer value)");
+		lblDistance = new JLabel("Enter distance in meters(integer value)");
 
 		txtTime = new JTextField(20);
 		txtPace = new JTextField(20);
 		txtDistance = new JTextField(20);
 		txtPace.setEnabled(false);
 
-		rbPace = new JRadioButton("Calculate pace based on time and distance:");
+		rbPace = new JRadioButton("Calculate pace based on time and distance");
 		rbPace.setActionCommand("pace");
 
-		rbTime = new JRadioButton("Calculate time based on pace and distance:");
+		rbTime = new JRadioButton("Calculate time based on pace and distance");
 		rbTime.setActionCommand("time");
 
-		rbDistance = new JRadioButton("Calculate distance based on pace and time:");
+		rbDistance = new JRadioButton("Calculate distance based on pace and time");
 		rbDistance.setActionCommand("distance");
 
 		ListenerForRadioButton lForRadioButton = new ListenerForRadioButton();
@@ -73,20 +80,28 @@ public class PaceCalcUI extends JFrame {
 		bgSelect.add(rbDistance);
 		rbPace.setSelected(true);
 
-		panelMain.add(lblTime);
-		panelMain.add(txtTime);
-		panelMain.add(lblDistance);
-		panelMain.add(txtDistance);
-		panelMain.add(lblPace);
-		panelMain.add(txtPace);
-
-		panelMain.add(rbPace);
-		panelMain.add(rbTime);
-		panelMain.add(rbDistance);
-		panelMain.add(btnCalc);
-		panelMain.add(btnExit);
+		Box enterBox = Box.createVerticalBox();
+		enterBox.add(lblTime);
+		enterBox.add(txtTime);
+		enterBox.add(lblDistance);
+		enterBox.add(txtDistance);
+		enterBox.add(lblPace);
+		enterBox.add(txtPace);
+		Box choiceBox = Box.createVerticalBox();
+		choiceBox.add(rbPace);
+		choiceBox.add(rbTime);
+		choiceBox.add(rbDistance);
+		choiceBox.setBorder(BorderFactory.createEtchedBorder());
+		Box buttonBox = Box.createHorizontalBox();
+		buttonBox.add(Box.createHorizontalGlue());
+		buttonBox.add(btnCalc);
+		buttonBox.add(btnExit);
+		componentAdd(panelMain, enterBox, 0, 0, 1, 1, GridBagConstraints.NORTHWEST, GridBagConstraints.HORIZONTAL);
+		componentAdd(panelMain, choiceBox, 1, 0, 1, 1, GridBagConstraints.NORTHWEST, GridBagConstraints.HORIZONTAL);
+		componentAdd(panelMain, buttonBox, 1, 1, 1, 1, GridBagConstraints.NORTHWEST, GridBagConstraints.HORIZONTAL);
 
 		this.add(panelMain);
+		this.pack();
 
 		this.setTitle("Pace Calculator");
 		this.setVisible(true);
@@ -174,4 +189,33 @@ public class PaceCalcUI extends JFrame {
 		}
 
 	}
+
+	private void componentAdd(JPanel thePanel, JComponent comp, int xPos, int yPos, int compWidth, int compHeight,
+			int place, int stretch) {
+		GridBagConstraints gridConstraints = new GridBagConstraints();
+		gridConstraints.gridx = xPos;
+
+		gridConstraints.gridy = yPos;
+
+		gridConstraints.ipadx = 5;
+		gridConstraints.ipady = 5;
+
+		gridConstraints.gridwidth = compWidth;
+
+		gridConstraints.gridheight = compHeight;
+
+		gridConstraints.weightx = 100;
+
+		gridConstraints.weighty = 100;
+
+		gridConstraints.insets = new Insets(5, 5, 5, 5);
+
+		gridConstraints.anchor = place;
+
+		gridConstraints.fill = stretch;
+
+		thePanel.add(comp, gridConstraints);
+
+	}
+
 }
