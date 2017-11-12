@@ -105,7 +105,7 @@ public class PaceCalcUI extends JFrame {
 		this.pack();
 		try {
 			ImageIcon icon = new ImageIcon(
-					getClass().getClassLoader().getResource("resources/winner-runner-arriving-to-end-line.png"));
+					getClass().getClassLoader().getResource("winner-runner-arriving-to-end-line.png"));
 
 			this.setIconImage(icon.getImage());
 		} catch (Exception e) {
