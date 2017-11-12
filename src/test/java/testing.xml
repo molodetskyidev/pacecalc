@@ -2,10 +2,10 @@
 <suite name="Suite" parallel="false">
   <test name="Test">
     <classes>
-      <class name="pacecalc.pacecalc.PaceCalcTest"/>
-      <class name="pacecalc.pacecalc.ParserTest"/>
-      <class name="pacecalc.pacecalc.KmToMileConvertorTest" />
-      <class name="pacecalc.pacecalc.EventsTest" />
+      <class name="pacecalc.PaceCalcTest"/>
+      <class name="pacecalc.ParserTest"/>
+      <class name="pacecalc.KmToMileConvertorTest" />
+      <class name="pacecalc.EventsTest" />
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -1,4 +1,4 @@
-package pacecalc.pacecalc;
+package pacecalc;
 
 import util.KmToMileConvertor;
 

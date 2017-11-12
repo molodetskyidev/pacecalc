@@ -1,4 +1,4 @@
-package pacecalc.pacecalc;
+package pacecalc;
 
 public class PaceCalc {
 	private int time; // time in seconds

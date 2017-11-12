@@ -1,4 +1,4 @@
-package pacecalc.pacecalc;
+package pacecalc;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -103,10 +103,14 @@ public class PaceCalcUI extends JFrame {
 
 		this.add(panelMain);
 		this.pack();
-		ImageIcon icon = new ImageIcon(
-				getClass().getClassLoader().getResource("resources/winner-runner-arriving-to-end-line.png"));
+		try {
+			ImageIcon icon = new ImageIcon(getClass().getClassLoader()
+					.getResource("../../../../../resources/winner-runner-arriving-to-end-line.png"));
 
-		this.setIconImage(icon.getImage());
+			this.setIconImage(icon.getImage());
+		} catch (Exception e) {
+			System.out.println("file not found");
+		}
 		this.setTitle("Pace Calculator");
 		this.setVisible(true);
 

@@ -1,8 +1,9 @@
-package pacecalc.pacecalc;
+package pacecalc;
 
 import org.testng.annotations.Test;
 
 import junit.framework.Assert;
+import pacecalc.PaceCalc;
 import util.Parser;
 
 public class ParserTest {
