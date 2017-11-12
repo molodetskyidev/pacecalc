@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
@@ -102,7 +103,10 @@ public class PaceCalcUI extends JFrame {
 
 		this.add(panelMain);
 		this.pack();
+		ImageIcon icon = new ImageIcon(
+				getClass().getClassLoader().getResource("resources/winner-runner-arriving-to-end-line.png"));
 
+		this.setIconImage(icon.getImage());
 		this.setTitle("Pace Calculator");
 		this.setVisible(true);
 
